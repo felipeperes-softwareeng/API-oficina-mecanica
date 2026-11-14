@@ -1,0 +1,87 @@
+:root {
+    --primary-color: #1e293b; /* Azul escuro/industrial */
+    --accent-color: #f59e0b;  /* Laranja mecânico */
+    --bg-color: #f8fafc;
+    --text-color: #334155;
+    --white: #ffffff;
+    --border-color: #e2e8f0;
+}
+
+/* Configuração global */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Conteúdo Principal (Card Centralizado) */
+main {
+    flex: 1;
+    max-width: 900px;
+    width: 85%;
+    margin: 2.5rem auto;
+    padding: 2.5rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--accent-color);
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
