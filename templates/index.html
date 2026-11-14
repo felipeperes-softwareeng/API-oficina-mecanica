@@ -5,4 +5,9 @@
 {% block conteudo %}
     <h1>Bem-vindo à Oficina Mecânica!</h1>
     <p>Esta é a página principal do nosso sistema de gerenciamento.</p>
+
+    <div class="acoes">
+        <a class="btn btn-primario" href="{{ url_for('lista_clientes') }}">Gerenciar clientes</a>
+        <a class="btn btn-primario" href="{{ url_for('lista_veiculos') }}">Gerenciar veículos</a>
+    </div>
 {% endblock %}

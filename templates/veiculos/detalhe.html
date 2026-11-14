@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block titulo %}{{ veiculo.placa }} - Oficina Mecânica{% endblock %}
+
+{% block conteudo %}
+    <div class="topo-pagina">
+        <h1>Veículo {{ veiculo.placa }}</h1>
+        <a class="btn btn-secundario" href="{{ url_for('editar_veiculo', veiculo_id=veiculo.id) }}">Editar</a>
+    </div>
+
+    <dl class="detalhes">
+        <dt>Modelo</dt><dd>{{ veiculo.modelo }}</dd>
+        <dt>Marca</dt><dd>{{ veiculo.marca }}</dd>
+        <dt>Ano</dt><dd>{{ veiculo.ano or '—' }}</dd>
+        <dt>Dono</dt>
+        <dd><a href="{{ url_for('detalhe_cliente', cliente_id=veiculo.cliente_id) }}">{{ veiculo.cliente_nome }}</a></dd>
+    </dl>
+
+    <p><a href="{{ url_for('lista_veiculos') }}">&larr; Voltar para veículos</a></p>
+{% endblock %}

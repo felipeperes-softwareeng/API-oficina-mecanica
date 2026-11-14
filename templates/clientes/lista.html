@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block titulo %}Clientes - Oficina Mecânica{% endblock %}
+
+{% block conteudo %}
+    <div class="topo-pagina">
+        <h1>Clientes</h1>
+        <a class="btn btn-primario" href="{{ url_for('novo_cliente') }}">+ Novo cliente</a>
+    </div>
+
+    {% if clientes %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Veículos</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in clientes %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td><a href="{{ url_for('detalhe_cliente', cliente_id=c.id) }}">{{ c.nome }}</a></td>
+                <td>{{ c.cpf or '—' }}</td>
+                <td>{{ c.telefone or '—' }}</td>
+                <td>{{ c.total_veiculos }}</td>
+                <td class="acoes">
+                    <a class="btn btn-secundario" href="{{ url_for('editar_cliente', cliente_id=c.id) }}">Editar</a>
+                    <form method="post" action="{{ url_for('excluir_cliente', cliente_id=c.id) }}"
+                          data-msg="Excluir {{ c.nome }}? Isso também apaga {{ c.total_veiculos }} veículo(s) e as ordens de serviço deles."
+                          onsubmit="return confirm(this.dataset.msg)">
+                        <button type="submit" class="btn btn-perigo">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p class="vazio">Nenhum cliente cadastrado ainda.</p>
+    {% endif %}
+{% endblock %}

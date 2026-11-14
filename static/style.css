@@ -85,3 +85,183 @@ footer {
     font-size: 0.9rem;
     margin-top: auto;
 }
+
+/* ------------------------------------------------------------------ */
+/* CRUD: mensagens, tabelas, botões e formulários                      */
+/* ------------------------------------------------------------------ */
+main a {
+    color: var(--primary-color);
+}
+
+main a:hover {
+    color: var(--accent-color);
+}
+
+/* Mensagens (flash) */
+.flash {
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    border: 1px solid;
+}
+
+.flash.sucesso {
+    background-color: #ecfdf5;
+    color: #065f46;
+    border-color: #a7f3d0;
+}
+
+.flash.erro {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border-color: #fecaca;
+}
+
+/* Topo da página (título + botão) */
+.topo-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.topo-pagina h1 {
+    flex: 1;
+}
+
+.topo-pagina h2 {
+    color: var(--primary-color);
+    margin: 1.5rem 0 0.5rem;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 0.7rem 0.6rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+th {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+tr:hover td {
+    background-color: #fffbeb;
+}
+
+.vazio {
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Botões */
+.acoes {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.acoes form {
+    margin: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+main a.btn-primario,
+.btn-primario {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+main a.btn-secundario,
+.btn-secundario {
+    background-color: var(--border-color);
+    color: var(--primary-color);
+}
+
+.btn-perigo {
+    background-color: #dc2626;
+    color: var(--white);
+}
+
+main a.btn:hover {
+    color: inherit;
+}
+
+/* Formulários */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-width: 480px;
+}
+
+.formulario label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 0.6rem;
+}
+
+.formulario input,
+.formulario select {
+    padding: 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+    outline: 2px solid var(--accent-color);
+    border-color: transparent;
+}
+
+.formulario .acoes {
+    margin-top: 1.2rem;
+}
+
+/* Detalhes (lista de dados) */
+.detalhes {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem 1.5rem;
+    margin: 1rem 0;
+}
+
+.detalhes dt {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.detalhes dd {
+    margin: 0;
+}
